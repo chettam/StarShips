@@ -7,6 +7,7 @@ class Player
 	property :id,   	Serial # Serial means that it will be auto-incremented  
 	property :name,		String
 	property :side,		String
+	property :playing, Boolean
 
 
 	def initialize_grid

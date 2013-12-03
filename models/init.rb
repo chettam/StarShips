@@ -6,6 +6,7 @@ env = ENV["RACK_ENV"] || "development"
 DataMapper.setup(:default, 'sqlite:/Users/jbblanc/Documents/dev/starships/data/starships.db')
 
 require_relative 'player'
+require_relative 'game'
 require_relative 'ship'
 require_relative 'grid'
 require_relative 'cell' # this needs to be done after datamapper is initialised

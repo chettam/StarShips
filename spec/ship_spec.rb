@@ -3,7 +3,7 @@ require_relative '../models/ship'
 describe Ship do
 
 		it "should place on the grid" do
-			player = Player.create(:name => "JB", :side => :sith)
+			player = Player.create(:name => "JB", :side => :sith,game_id: 1)
 			player.initialize_grid
 			player.initialize_ships
 			origin = player.grid.cells.first
