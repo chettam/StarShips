@@ -1,6 +1,6 @@
 # encoding: utf-8
 require 'sinatra'
-require 'data_mapper'
+
 
 
 class StarShips < Sinatra::Application
