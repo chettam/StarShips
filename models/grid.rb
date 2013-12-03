@@ -12,9 +12,20 @@ class Grid
 	def initialize_cells
 		size.times do |row_index|
 			size.times do |cell_index|
-				puts "creating cell at #{row_index} #{cell_index} #{id}" 
 				Cell.create(x_position: cell_index, y_position: row_index, grid_id: id)
 			end
 		end
 	end 
+
+
+	def horizontal_cells(origin,length)
+		end_position = origin.x_position + length
+    cells.all(x_position: (origin.x_position...end_position), y_position: origin.y_position)
+
+	end
+
+	def vertical_cells(origin,length)
+		end_position = origin.y_position + length
+    cells.all(y_position: (origin.y_position...end_position), x_position: origin.x_position)
+	end
 end

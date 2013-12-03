@@ -21,7 +21,7 @@ class Ship
 	belongs_to :player
 	property :id,   	Serial # Serial means that it will be auto-incremented  
 	property :name,		String
-	property :type,		String
+	property :type,		Integer
 	property :placed , Boolean
 
 

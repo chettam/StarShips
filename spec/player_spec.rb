@@ -7,7 +7,6 @@ describe Player do
 		player.initialize_grid
 		player.initialize_ships
 		expect(player.ships.length).to eq(5)
-		puts player.grid
 		expect(player.grid).to  be_a_kind_of(Grid)
 
 	end
