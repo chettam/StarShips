@@ -10,8 +10,8 @@ class Player
 	property :playing, Boolean
 
 
-	def initialize_grid
-		grid = Grid.create(size: 10,player_id: id )
+	def initialize_grid(size = 10 )
+		grid = Grid.create(size: size,player_id: id )
 		grid.initialize_cells
 	end
 
