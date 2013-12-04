@@ -11,14 +11,15 @@ class StarShips < Sinatra::Application
 
   get '/game' do
   	redirect to('/')  if session[:game] == nil
-  	@available_slots = available_slots
+  	@available_slots =  session[:player].nil? ? available_slots : 0
   	erb :game
 	 end
 
-  post 'add-player' do
+  post '/add-player' do
   	game = current_game
   	name = params[:name] ; side = params[:side].to_sym
   	player = game.initialize_player(name, side)
+  	puts player.inspect
   	session[:player] = player.id
 		redirect to('/game') 
 	end

@@ -8,9 +8,16 @@ class Game
 	property :grid_size, Integer
 
 	def initialize_player(name, side)
-		player = Player.create(name: name, side: side, game_id: id,grid_size: size )
+		player = Player.create(name: name, side: side, game_id: id,grid_size: grid_size )
+		puts player.inspect
 		player.initialize_grid
 		player.initialize_ships
 		player
+	end
+
+	def available_slots
+		puts number_of_players
+		puts self.players.count
+	 self.players.count.nil?  ? self.number_of_players : self.number_of_players - self.players.count
 	end
 end
