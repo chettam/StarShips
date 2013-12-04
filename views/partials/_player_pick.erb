@@ -1,0 +1,24 @@
+<% if n.even? %>
+<form action="/add-player" method="post">
+<div class="col-lg-4">
+  <img class="img-circle" src="/images/sidious.png" alt="Generic placeholder image">
+  <h2>Be a Sith</h2>
+  <p>An ancient order of Force-practitioners devoted to the dark side and determined to destroy the Jedi, the Sith were a menace long thought extinct. </p><p>Thousands of years ago, a rogue Jedi had come to the understanding that the true power of the Force lay not through contemplation and passivity.</p>
+  <p> Choose your name :     <input type="text" name="name" placeholder="Enter Name"></p>
+  <input type="hidden" name="side" value="sith">
+  <p><button type="submit" class="btn btn-default">Create Player</button></p>
+  </form>
+</div><!-- /.col-lg-4 -->
+<% else %>
+<form action="/add-player" method="post">
+<div class="col-lg-4">
+  <img class="img-circle" src="/images/yoda.png" alt="Generic placeholder image">
+  <h2>Be a Jedi</h2>
+  <p>A noble order of protectors unified by their ability to tap into the power of the Force, the Jedi were the guardians of peace and justice in the Galactic Republic.</p>
+  <p>To become a Jedi requires the deepest commitment and most serious mind. They were governed by a High Council of 12 Jedi Masters.</p>
+  <p> Choose your name :     <input type="text" name="name" placeholder="Enter Name"></p>
+  <input type="hidden" name="side" value="jedi">
+  <p><button type="submit" class="btn btn-default">Create Player</button></p>
+  </form>
+</div><!-- /.col-lg-4 -->
+<% end %>

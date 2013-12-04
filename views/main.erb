@@ -52,15 +52,15 @@
     
     <div class="container marketing">
 <% if @available_games.count > 0 %>
-  <h2>Pick a player</h2>
+  <h2>Available Games :</h2>
   <div class="row">
    <% @available_games.each do |game| %>
       <form action="/join-game" method="post">
         <div class="col-lg-4">
-          <img class="img-circle" src="/images/sidious.png" alt="Generic placeholder image">
+          <img class="img-circle" src="/images/planet<%=rand(1..5)%>.png" alt="Generic placeholder image">
           <h2><%= game.name %></h2>
           <p>you can join now ! </p><p>there is <%= game.available_slots%> free slot in this game</p>
-          <input type="hidden" name="side" value='+ <%=game.id %>+'>
+          <input type="hidden" name="game_id" value="<%=game.id %>">
           <p><button type="submit" class="btn btn-default">Join Game !</button></p>
           </form>
         </div><!-- /.col-lg-4 -->

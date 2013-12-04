@@ -12,5 +12,5 @@ class StarShips < Sinatra::Application
 		session[:player] = nil
 		@available_games = available_games
     erb :main
-  end
+  end 
 end
