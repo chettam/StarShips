@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
-require_relative '../str'
-describe Starships do
+require_relative '../app'
+describe StarShips do
 
 
 

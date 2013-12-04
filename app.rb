@@ -5,6 +5,7 @@ require 'sinatra'
 
 class StarShips < Sinatra::Application
   enable :sessions
+  set :session_secret, "cedvjrnvoirgbruvgovieirvjerobge"
 
 
 end
