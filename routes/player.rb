@@ -5,6 +5,7 @@ class StarShips < Sinatra::Application
   	name = params[:name] ; side = params[:side].to_sym
   	player = game.initialize_player(name, side)
   	session[:player] = player.id
+  	play_first
 		redirect to('/game') 
 	end
 

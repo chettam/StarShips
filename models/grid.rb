@@ -33,7 +33,7 @@ class Grid
 	end
 
 	def out_of_range?(origin, length)
-		origin + length > size - 1
+		origin + length > size 
 	end
 
 	def all_empty?(cells)

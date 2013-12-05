@@ -24,8 +24,22 @@
 	width: 52px;
 }
 
-.btn-space{
+.empty{
 	background: url("/images/space.png") no-repeat ;
+}
+
+.hit{
+background-color: #d9534f;
+}
+.shiphit{
+background-color: #d9534f;
+}
+.shipempty{
+	background-color: #5cb85c;
+}
+
+.miss{
+	background-color: #ebebeb;
 }
 
 .center{

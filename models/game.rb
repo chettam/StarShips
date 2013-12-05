@@ -17,4 +17,9 @@ class Game
 	def available_slots
 	 self.players.count.nil?  ? self.number_of_players : self.number_of_players - self.players.count
 	end
+
+
+	def over?
+		!players.any?{|player| player.lose?}
+	end
 end

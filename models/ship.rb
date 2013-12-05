@@ -24,4 +24,7 @@ class Ship
 	property :type,		Integer
 	property :placed , Boolean
 
+	def sunk?
+		!cells.any?{|cell| cell.status != :hit}
+	end
 end

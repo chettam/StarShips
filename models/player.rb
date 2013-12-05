@@ -38,7 +38,8 @@ class Player
 		cells.each {|cell| cell.update(ship_id: ship.id)}
 	end
 
-
-
+	def lose?
+		!ships.any?{|ship| ship.sunk?}
+	end
 
 end

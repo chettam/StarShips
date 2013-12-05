@@ -21,7 +21,7 @@ class Cell
   		if attacked
 	  		:hit
 	  	else
-	  		:occupied
+	  		:empty
 	  	end
 	  else
 	  	if attacked

@@ -8,6 +8,7 @@
     <% end %>
   </div>
 <% end %>
+<%unless current_game.over? %>
 <% unless @ships.nil? %>
 <div class="row">
   <div class="col-md-3 pushdown">
@@ -17,6 +18,10 @@
   	</div>
 <% end %>
 <div class="col-md-9 pushdown">
+  <h1><%=player.name %></h1>
+  <% if player.playing == true%>
+  <h5>It is your turn to play</h5>
+  <% end %>
 <% unless @grid.nil? %>
   
     	<%= erb :'partials/_grid_display', :layout => false, :locals => { :grid => @grid, } %>
@@ -29,4 +34,8 @@
 <% end %>
   </div>
 </div>
+<%else %>
+  <h1>game over </h1>
+  <% end %>
+
 </div>
