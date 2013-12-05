@@ -12,7 +12,7 @@ class Player
 
 
 	def initialize_grid
-		grid = Grid.create(size: grid_size,player_id: id )
+		grid = Grid.create(size: grid_size || 10,player_id: id )
 		grid.initialize_cells
 	end
 
@@ -23,9 +23,9 @@ class Player
 
 	def place(ship,origin,direction)
 		cells=[]
-		 if direction == :vertical	  	
+		 if direction == "vertical"	  	
 	 	  cells =	grid.vertical_cells(origin,ship.type)
-	 	elsif  direction == :horizontal
+	 	elsif  direction == "horizontal"
 	 		cells = grid.horizontal_cells(origin,ship.type)
 	 	end
 	 	 if !cells.nil?
@@ -35,6 +35,7 @@ class Player
 	end
 
 	def occupy_cells(ship,cells)
+		puts cells.inspect
 		cells.each {|cell| cell.update(ship_id: ship.id)}
 	end
 

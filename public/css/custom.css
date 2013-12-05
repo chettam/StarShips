@@ -2,3 +2,17 @@
 	margin-top: 80px;
 	margin-bottom: 30px;
 }
+
+.gridbutton{
+		height: 50px;
+	width: 50px;
+	
+}
+.celldiv{
+	height: 52px;
+	width: 52px;
+}
+
+.btn-space{
+	background: url("/images/space.png") no-repeat ;
+}

@@ -10,11 +10,14 @@
 <% end %>
 <% unless @ships.nil? || @grid.nil? %>
 <div class="row">
-  <div class="col-md-4 pushdown">.col-md-8</div>
+  <div class="col-md-3 pushdown">
   	<% @ships.each do |ship| %>
   			<%= erb :'partials/_ship_display', :layout => false, :locals => { :ship => ship, } %>
   	<% end %>
-  <div class="col-md-8 pushdown">.col-md-4</div>
+  	</div>
+  <div class="col-md-9 pushdown">
+		<%= erb :'partials/_grid_display', :layout => false, :locals => { :grid => @grid, } %>
+  </div>
 </div>
 <% end %>
 

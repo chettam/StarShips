@@ -24,30 +24,4 @@ class Ship
 	property :type,		Integer
 	property :placed , Boolean
 
-
-	# def place(x_position,y_position,type,orientation)
-	# 	 if orientation == "vertical"	 
-
-	#  		cells = grid.vertical_cells(origin,length)
-	#  	elsif  orientation == "horizontal"
-	#  		@cells = grid.horizontal_cells(origin,length)
-	#  	end
-	#  		occupy_cells
-	#  		self.placed = true
-	#  	end
-	# end
-
-	# def occupy_cells
-		
-	# end
-
-
-
-
-		# def destroyed?
-		# 	self.cells.state.all?(:hit)
-		# end
-
-
-
 end

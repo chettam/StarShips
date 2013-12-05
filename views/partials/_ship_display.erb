@@ -1,0 +1,22 @@
+<h5> <%=ship.name %> </h5>
+ <% unless ship.placed %>
+	Enter coordinates : (for ex A,2)
+	<form action="/place-ship" method="post" class="form-inline" role="form">
+		<input type="hidden" name="ship" value=<%=ship.id %>>
+  <div class="form-group">
+    <label class="sr-only" for="coordinates">coordinates</label>
+    <input type="string" name="coordinates" class="form-control" placeholder="ex A,2">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputPassword2">Direction</label>
+    <select name="direction" class="form-control">
+  		<option value="vertical" >vertical</option>
+  		<option value="horizontal" >horizontal</option>
+		</select>
+  </div>
+  <button type="submit" class="btn btn-default">Place Ship !</button>
+</form>
+
+
+ 	<%end%>
+

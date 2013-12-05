@@ -1,0 +1,24 @@
+
+<div class="row">
+	<div class="col-md-1 celldiv "></div>
+	<% grid.size.times do |n|%>
+<div class="col-md-1 celldiv "><button type="button" class="btn gridbutton  btn-default"><%= letter(n)%></button></div>
+<%end%>
+</div>
+
+<% grid.size.times do |n|%>
+<div class="row">
+	<div class="col-md-1 celldiv "><button type="button" class="btn gridbutton  btn-default"><%=n+1%></button></div>
+	<%array = grid.cells.slice!(0,grid.size)%>
+	<div class="cells">
+		<%array.each do |cell|%>
+			<div class="col-md-1 celldiv "><button type="button" class="btn gridbutton  btn-space"></button></div>
+		<%end%>
+	</div>
+</div>
+
+<% end %>
+
+
+
+</div>
