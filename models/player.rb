@@ -23,8 +23,8 @@ class Player
 
 	def place(ship,origin,direction)
 		cells=[]
-		 if direction == "vertical"	  	
-	 	  cells =	grid.vertical_cells(origin,ship.type)
+		if direction == "vertical"
+	 	  	cells =	grid.vertical_cells(origin,ship.type)
 	 	elsif  direction == "horizontal"
 	 		cells = grid.horizontal_cells(origin,ship.type)
 	 	end
@@ -35,7 +35,6 @@ class Player
 	end
 
 	def occupy_cells(ship,cells)
-		puts cells.inspect
 		cells.each {|cell| cell.update(ship_id: ship.id)}
 	end
 
