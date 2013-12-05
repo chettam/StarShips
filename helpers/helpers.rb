@@ -10,6 +10,10 @@ module Helpers
 		ALPHABET.index(letter.downcase)
 	end
 
+	def coordinates(cell)
+		return letter(cell.x_position).to_s + (cell.y_position + 1).to_s
+	end
+
 	def select_cell(coordinates)
 		x_position, y_position = coordinates_to_position(coordinates)
 		Cell.first(x_position: x_position,y_position: y_position )
@@ -21,6 +25,10 @@ module Helpers
 			y_position = array[1].to_i - 1
 			return x_position , y_position
 	end
+
+
+
+  
 
 
 end

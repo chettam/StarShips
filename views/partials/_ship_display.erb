@@ -16,7 +16,11 @@
   </div>
   <button type="submit" class="btn btn-default">Place Ship !</button>
 </form>
-
-
- 	<%end%>
+	<% else %>
+	<div class="row">
+		<% ship.cells.each do |cell|%>
+			<div class="col-md-1 shipdiv "><button type="button" class="btn shipbutton  btn-success"><%= coordinates(cell) %></button></div>
+		<% end %>
+	</div>
+	<% end %>
 
