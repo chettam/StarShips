@@ -1,4 +1,5 @@
 
+<form action="/bomb" method="post">
 <div class="row">
 	<div class="col-md-1 griddiv "></div>
 	<% grid.size.times do |n|%>
@@ -12,7 +13,7 @@
 	<%array = grid.cells.slice!(0,grid.size)%>
 	<div class="cells">
 		<%array.each do |cell|%>
-			<div class="col-md-1 griddiv "><button type="button" class="btn gridbutton  btn-space"></button></div>
+			<div class="col-md-1 griddiv "><button type="submit" name="cell" value=<%=cell.id %> class="btn gridbutton  btn-space"></button></div>
 		<%end%>
 	</div>
 </div>
@@ -21,4 +22,6 @@
 
 
 
-</div>
+
+</div> 
+</form>

@@ -25,9 +25,6 @@ class Grid
 	end
 
 	def vertical_cells(origin,length)
-		puts origin.inspect
-		puts length
-
 		end_position = origin.y_position + length
     cells.all(y_position: (origin.y_position...end_position), x_position: origin.x_position)
 	end
