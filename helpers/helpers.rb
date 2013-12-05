@@ -20,7 +20,7 @@ module Helpers
 	end
 
 	def coordinates_to_position(coordinates)
-			array = coordinates.split(",")
+			coordinates.include?(",") ? array = coordinates.split(",") : array = coordinates.split("")
 			x_position = number(array[0])
 			y_position = array[1].to_i - 1
 			return x_position , y_position
