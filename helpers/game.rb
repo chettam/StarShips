@@ -9,5 +9,7 @@ module Helpers
   	game.number_of_players - game.players.count
   end
 
-
+  def all_cells(player_id)
+  	grid =Grid.first(player_id: player_id)
+  end
 end

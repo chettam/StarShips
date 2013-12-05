@@ -8,17 +8,25 @@
     <% end %>
   </div>
 <% end %>
-<% unless @ships.nil? || @grid.nil? %>
+<% unless @ships.nil? %>
 <div class="row">
   <div class="col-md-3 pushdown">
   	<% @ships.each do |ship| %>
   			<%= erb :'partials/_ship_display', :layout => false, :locals => { :ship => ship, } %>
   	<% end %>
   	</div>
-  <div class="col-md-9 pushdown">
-		<%= erb :'partials/_grid_display', :layout => false, :locals => { :grid => @grid, } %>
+<% end %>
+<div class="col-md-9 pushdown">
+<% unless @grid.nil? %>
+  
+    	<%= erb :'partials/_grid_display', :layout => false, :locals => { :grid => @grid, } %>
+
+<% else %>
+     <div class="jumbotron">
+  <h1>Waiting for an opponent</h1>
+  <p>The force is too strong with you, wait for an opponent to join</p>
+</div> 
+<% end %>
   </div>
 </div>
-<% end %>
-
 </div>

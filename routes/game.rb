@@ -5,7 +5,8 @@ class StarShips < Sinatra::Application
   	unless session[:player].nil?
 	  	@available_slots = 0
 	  	@ships = player.ships
-	  	@grid  = player.grid
+
+	  	@grid  = opponent.empty? ? nil : all_cells(opponent.first.id)
   	else 
   		@available_slots =available_slots
   	end
