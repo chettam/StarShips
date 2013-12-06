@@ -1,6 +1,6 @@
-
+<!-- guys, in general you have a bit of a mess with indentation :) -->
 <div class="container pushdown">
-<% if @available_slots > 0 %>
+<% if @available_slots > 0 # this should be a helper %>
 	<h2>Pick a player</h2>
 	<div class="row">
 	 <% @available_slots.times do |n| %>
@@ -13,14 +13,14 @@
 <div class="row">
   <div class="col-md-3 pushdown">
   	<% @ships.each do |ship| %>
-  			<%= erb :'partials/_ship_display', :layout => false, :locals => { :ship => ship, } %>
+  		<%= erb :'partials/_ship_display', :layout => false, :locals => { :ship => ship, } %>
   	<% end %>
   	</div>
 <% end %>
 <div class="col-md-9 pushdown">
   <h1><%=player.name %></h1>
-  <% if player.playing == true%>
-  <h5>It is your turn to play</h5>
+  <% if player.playing %>
+    <h5>It is your turn to play</h5>
   <% end %>
 <% unless @grid.nil? %>
   

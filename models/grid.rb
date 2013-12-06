@@ -12,31 +12,34 @@ class Grid
 	def initialize_cells
 		size.times do |row_index|
 			size.times do |cell_index|
-				Cell.create(x_position: cell_index, y_position: row_index, grid_id: id)
+				Cell.create(x_position: cell_index, y_position: row_index, grid: self)
 			end
 		end
 	end 
 
 
 	def horizontal_cells(origin,length)
-		cell_array = []
-		end_position = origin.x_position + length
-    	cell_array = cells.all(x_position: (origin.x_position...end_position), y_position: origin.y_position)
-    	!all_empty?(cell_array) || out_of_range?(origin.x_position, length) ? nil : cell_array
+		cells_subset(origin, length, :x_position)
 	end
 
+  def cells_subset(origin, length, direction)
+    return if cells_not_empty_or_out_of_range(origin.send(direction), length)    
+    other_direction = ([:x_position, :y_position] - [direction]).first
+    end_position = origin.send(direction) + length
+    cells.all(direction => (origin.send(direction)...end_position), 
+              other_direction => origin.send(other_direction))    
+  end
+
+  def cells_not_empty_or_out_of_range(position, length)
+    !cells.all?(&:empty?) || out_of_range?(position, length)
+  end
+
 	def vertical_cells(origin,length)
-		cell_array = []
-		end_position = origin.y_position + length
-		cell_array = cells.all(y_position: (origin.y_position...end_position), x_position: origin.x_position)
-   		!all_empty?(cell_array) || out_of_range?(origin.y_position, length) ? nil : cell_array
+		cells_subset(origin, length, :y_position)
 	end
 
 	def out_of_range?(origin, length)
 		origin + length > size 
 	end
 
-	def all_empty?(cells)
-		cells.select{|cell| cell.status != :empty}.length > 0 ? false : true 
-	end
 end
