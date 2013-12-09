@@ -2,15 +2,13 @@ require 'data_mapper'
 
 env = ENV["RACK_ENV"] || "development"
 # we're telling datamapper to use a postgres database on localhost. The name will be "bookmark_manager_test" or "bookmark_manager_development" depending on the environment
-<<<<<<< HEAD
-=======
+
 #DataMapper::Logger.new(STDOUT, :debug)
 
 # you have starships.db and startships.db Just a typo, I know, but don't check in incorrect file at all
 
 # don't use absolute paths – your tests won't run on any other machine
 DataMapper.setup(:default, "sqlite:#{Dir.pwd}/data/starships.db")
->>>>>>> 4f004025da017f8b4201920ff188a7e31b0f2b04
 
 require_relative 'player'
 require_relative 'game'
