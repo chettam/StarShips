@@ -14,12 +14,14 @@ class Game
 		player
 	end
 
-	def available_slots
-	 self.players.count.nil?  ? self.number_of_players : self.number_of_players - self.players.count
+	def available_slots	 
+	 self.number_of_players - (self.players.count || 0)
 	end
 
 
 	def over?
+		# shouldn't this be opposite? If any player lost, the game is over, right?
+		# in any case, no tests for this :(
 		!players.any?{|player| player.lose?}
 	end
 end

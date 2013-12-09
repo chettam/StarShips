@@ -2,6 +2,7 @@
 class StarShips < Sinatra::Application
   def available_games
   	games = Game.all
+    # it will never return nil. It will be an empty array if there are no games
   	games.nil? ? [] : games.select{|game| game.available_slots > 0}
 	end
 

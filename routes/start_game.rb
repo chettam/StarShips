@@ -1,7 +1,7 @@
 # encoding: utf-8
 class StarShips < Sinatra::Application
   get '/start-game' do
-  erb :start_game
+    erb :start_game
   end
 
 
@@ -9,7 +9,7 @@ class StarShips < Sinatra::Application
 		game_name         = params[:game_name]
 		number_of_players = params[:number_of_players]
 		grid_size				  = params[:grid_size]
-		game = Game.create(name: game_name, number_of_players: number_of_players,grid_size: grid_size)
+		game = Game.create(name: game_name, number_of_players: number_of_players, grid_size: grid_size)
 		session[:game] = game.id
 		redirect to('/')
 	end

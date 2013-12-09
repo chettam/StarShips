@@ -8,6 +8,7 @@ class StarShips < Sinatra::Application
   set :session_secret, "cedvjrnvoirgbruvgovieirvjerobge"
 end
 
+# well done for breaking it down into smaller files
 require_relative 'models/init'
 require_relative 'helpers/init'
 require_relative 'routes/init'

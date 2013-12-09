@@ -16,23 +16,22 @@ class Cell
   property :y_position, Integer
 
 
-  def status
-  	if ship
-  		if attacked
-	  		:hit
-	  	else
-	  		:empty
-	  	end
-	  else
-	  	if attacked
-	  		:miss
-	  	else
-	  		:empty
-	  	end
-	  end
+  def status 
+    return :empty unless attacked
+    ship ? :hit : :miss
 	end
 
+  def empty?
+    !attacked?
+  end
 
+  def hit?
+    attacked? && !ship.nil?
+  end
+
+  def miss?
+    attacked? && ship.nil?
+  end
 
 end
 
