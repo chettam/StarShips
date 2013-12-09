@@ -1,7 +1,11 @@
 class StarShips < Sinatra::Application
   
  get '/game' do
-  	redirect to('/')  if session[:game] == nil
+    # There's a bit of mess in this method
+    # 1. If you redirect, you should return immediately. Redirect on its own doesn't return
+    # 2. If you are rendering erb :game, then there should be no possibility of redirecting later
+    # So, there should be at most one redirect OR render per action in any case    
+  	redirect to('/') if session[:game].nil?
   	unless session[:player].nil?
 	  	@available_slots = 0
 	  	@ships = player.ships
@@ -21,8 +25,7 @@ class StarShips < Sinatra::Application
 end
 
 	post '/join-game' do
-		game_id = params[:game_id]
-		session[:game] = game_id
+		session[:game] = params[:game_id]		 
 		redirect to('/game')
 	end
 end
